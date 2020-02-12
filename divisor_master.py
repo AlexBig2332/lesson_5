@@ -16,18 +16,24 @@ n = int(input('Input natural number '))
 print('1) проверка числа на простоту\n', num_simple(n))
 
 # 2) выводит список всех делителей числа;
+# def num_divisors(n):
+#     result = []
+#     i = 1
+#     while i <= sqrt(n):
+#         if n % i == 0:
+#             if (n / i) % i == i:
+#                 result.append(i)
+#             else:
+#                 result.extend([i, n // i])
+#         i = i + 1
+#     result.sort()
+#     return result
 def num_divisors(n):
-    result = []
-    i = 1
-    while i <= sqrt(n):
+    res = []
+    for i in range(1, n + 1):
         if n % i == 0:
-            if n / i == i:
-                result.append(i)
-            else:
-                result.extend([i, n // i])
-        i = i + 1
-    result.sort()
-    return result
+            res.append(i)
+    return res
 
 
 print('2) выводит список всех делителей числа\n', num_divisors(n))
@@ -39,6 +45,6 @@ def num_max_divisor(n):
     return max(list(filter(num_simple, num_divisors(n))))
 
 
-print('3) выводит самый большой простой делитель числа\n', num_max_divisor(n))
+print('3) выводим самый большой простой делитель числа\n', num_max_divisor(n))
 
 
