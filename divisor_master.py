@@ -25,15 +25,15 @@ print('1) проверка числа на простоту\n', num_simple(n))
 #                 result.append(i)
 #             else:
 #                 result.extend([i, n // i])
-#         i = i + 1
+#         i += 1
 #     result.sort()
 #     return result
 def num_divisors(n):
-    res = []
+    result = []
     for i in range(1, n + 1):
         if n % i == 0:
-            res.append(i)
-    return res
+            result.append(i)
+    return result
 
 
 print('2) выводит список всех делителей числа\n', num_divisors(n))
